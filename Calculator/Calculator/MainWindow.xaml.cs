@@ -1,0 +1,89 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace Calculator
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+       
+      
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+          
+            Button button = (Button)sender;
+            if (screen.Text == "0"&&!button.Content.Equals("."))
+                screen.Clear();
+            if ((string)button.Content == ".")
+            {
+                if (!screen.Text.EndsWith("."))
+                    screen.Text += button.Content;
+
+            }
+            else
+            {
+                screen.Text += button.Content;
+
+            }
+
+        }
+        private void Operator_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            if (screen.Text == "0" && button.Content.Equals("-"))
+            {
+                screen.Clear();
+            }
+            screen.Text +=  button.Content;
+        }
+ 
+
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (screen.Text.Length > 1)
+            {
+                screen.Text = screen.Text.Remove(screen.Text.Length - 1);
+            }
+            else
+            {
+                screen.Text = "0";
+
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+            {
+                screen.Text = "0";
+            }
+
+        private void equals_Click(object sender, EventArgs e)
+        {
+            var something = new DataTable().Compute(screen.Text, null);
+            screen.Text = Convert.ToString(something).Replace(",",".");
+           
+        }
+            
+
+        }
+}
