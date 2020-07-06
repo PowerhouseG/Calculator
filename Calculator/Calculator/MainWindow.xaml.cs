@@ -79,8 +79,19 @@ namespace Calculator
 
         private void equals_Click(object sender, EventArgs e)
         {
-            var something = new DataTable().Compute(screen.Text, null);
-            screen.Text = Convert.ToString(something).Replace(",",".");
+            try
+            {
+                var something = new DataTable().Compute(screen.Text, null);
+                screen.Text = Convert.ToString(something).Replace(",", ".");
+            }
+            catch (OverflowException)
+            {
+                screen.Text = "Number Too Big!";
+            }
+            catch (Exception)
+            {
+                screen.Text = "Invalid Command!";
+            }
            
         }
             
