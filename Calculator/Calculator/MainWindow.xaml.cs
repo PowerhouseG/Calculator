@@ -102,13 +102,13 @@ namespace Calculator
             }
         }
 
-        private void clear_Click(object sender, EventArgs e)
+        private void Clear_Click(object sender, EventArgs e)
             {
                 screen.Text = "0";
             dot_present = false;
             }
 
-        private void equals_Click(object sender, EventArgs e)
+        private void Equals_Click(object sender, EventArgs e)
         {
             try
             {
