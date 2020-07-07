@@ -5,30 +5,216 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="Calculator" Height="450" Width="414.5" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid HorizontalAlignment="Left" Width="425" Margin="10,0,-27,11">
+        Title="Calculator"
+        Height="469.5"
+        Width="446"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid HorizontalAlignment="Left"
+          Width="436"
+          Margin="10,-16,-6,-1">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="322*"/>
-            <ColumnDefinition Width="127*"/>
+            <ColumnDefinition Width="149*" />
+            <ColumnDefinition Width="69*" />
         </Grid.ColumnDefinitions>
-        <Button Content="8" HorizontalAlignment="Left" Margin="100,115,0,0" VerticalAlignment="Top" Width="50" Height="50" FontFamily="Britannic Bold" FontSize="20" RenderTransformOrigin="-0.25,0.47" Click="Button_Click"/>
-        <Button Content="9" HorizontalAlignment="Left" Margin="174,115,0,0" VerticalAlignment="Top" Width="50" Height="50" FontFamily="Britannic Bold" FontSize="20" RenderTransformOrigin="0.717,0.356" Click="Button_Click"/>
-        <Button Content="/" HorizontalAlignment="Left" Margin="244,115,0,0" VerticalAlignment="Top" Width="50" Height="50" FontFamily="Britannic Bold" FontSize="30" RenderTransformOrigin="-0.25,0.47" Click="Operator_Click"/>
-        <Button Content="4" HorizontalAlignment="Left" Margin="30,190,0,0" VerticalAlignment="Top" Width="50" Height="50" FontFamily="Britannic Bold" FontSize="20" RenderTransformOrigin="0.717,0.356" Click="Button_Click"/>
-        <Button Content="5" HorizontalAlignment="Left" Margin="100,190,0,0" VerticalAlignment="Top" Width="50" Height="50" FontFamily="Britannic Bold" FontSize="20" RenderTransformOrigin="-0.06,0.86" Click="Button_Click"/>
-        <Button Content="6" HorizontalAlignment="Left" Margin="174,190,0,0" VerticalAlignment="Top" Width="50" Height="50" FontFamily="Britannic Bold" FontSize="20" RenderTransformOrigin="0.717,0.356" Click="Button_Click"/>
-        <Button Content="*" HorizontalAlignment="Left" Margin="244,190,0,0" VerticalAlignment="Top" Width="50" Height="50" FontFamily="Britannic Bold" FontSize="30" RenderTransformOrigin="-0.25,0.47" Click="Operator_Click"/>
-        <Button Content="3" HorizontalAlignment="Left" Margin="174,265,0,0" VerticalAlignment="Top" Width="50" Height="50" FontFamily="Britannic Bold" FontSize="20" RenderTransformOrigin="0.717,0.356" Click="Button_Click"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="244,265,0,0" VerticalAlignment="Top" Width="50" Height="50" FontFamily="Britannic Bold" FontSize="30" RenderTransformOrigin="-0.25,0.47" Click="Operator_Click"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="244,340,0,0" VerticalAlignment="Top" Width="50" Height="50" FontFamily="Britannic Bold" FontSize="30" RenderTransformOrigin="0.717,0.356" Click="Operator_Click"/>
-        <Button Content="0" HorizontalAlignment="Left" Margin="30,340,0,0" VerticalAlignment="Top" Width="120" Height="50" FontFamily="Britannic Bold" FontSize="20" RenderTransformOrigin="-0.25,0.47" Click="Button_Click"/>
-        <Button Content="." HorizontalAlignment="Left" Margin="174,340,0,0" VerticalAlignment="Top" Width="50" Height="50" FontFamily="Britannic Bold" FontSize="30" RenderTransformOrigin="0.717,0.356" Click="Button_Click"/>
-        <Button Content="CE" HorizontalAlignment="Left" Margin="313,115,0,0" VerticalAlignment="Top" Width="70" Height="50" FontFamily="Britannic Bold" FontSize="20" RenderTransformOrigin="-0.25,0.47" Click="button4_Click" Grid.ColumnSpan="2"/>
-        <Button Content="C" HorizontalAlignment="Left" Margin="313,190,0,0" VerticalAlignment="Top" Width="70" Height="50" FontFamily="Britannic Bold" FontSize="20" RenderTransformOrigin="-0.25,0.47" Click="button5_Click" Grid.ColumnSpan="2"/>
-        <Button x:Name="equal_button" Content="=" HorizontalAlignment="Left" Margin="8,265,0,0" VerticalAlignment="Top" Width="70" Height="125" FontFamily="Britannic Bold" FontSize="30" RenderTransformOrigin="-0.25,0.47" Click="equals_Click" Grid.Column="1"/>
-        <Button Content="7" HorizontalAlignment="Left" Margin="30,115,0,0" VerticalAlignment="Top" Width="50" Height="50" FontFamily="Britannic Bold" FontSize="20" RenderTransformOrigin="-0.25,0.47" Click="Button_Click"/>
-        <TextBox x:Name="screen" HorizontalAlignment="Left" Height="50" Margin="30,30,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="353" Grid.ColumnSpan="2" FontFamily="Times New Roman" FontWeight="Bold" FontSize="40" FlowDirection="LeftToRight" TextOptions.TextFormattingMode="Display"/>
-        <Button Content="2" HorizontalAlignment="Left" Margin="100,265,0,0" VerticalAlignment="Top" Width="50" Height="50" FontFamily="Britannic Bold" FontSize="20" RenderTransformOrigin="0.717,0.356" Click="Button_Click"/>
-        <Button Content="1" HorizontalAlignment="Left" Margin="30,265,0,0" VerticalAlignment="Top" Width="50" Height="50" FontFamily="Britannic Bold" FontSize="20" RenderTransformOrigin="0.717,0.356" Click="Button_Click"/>
+        <Button Content="8"
+                HorizontalAlignment="Left"
+                Margin="108,134,0,0"
+                VerticalAlignment="Top"
+                Width="50"
+                Height="50"
+                FontFamily="Britannic Bold"
+                FontSize="20"
+                RenderTransformOrigin="-0.25,0.47"
+                Click="Button_Click" />
+        <Button Content="9"
+                HorizontalAlignment="Left"
+                Margin="178,134,0,0"
+                VerticalAlignment="Top"
+                Width="50"
+                Height="50"
+                FontFamily="Britannic Bold"
+                FontSize="20"
+                RenderTransformOrigin="0.717,0.356"
+                Click="Button_Click" />
+        <Button Content="/"
+                HorizontalAlignment="Left"
+                Margin="248,134,0,0"
+                VerticalAlignment="Top"
+                Width="50"
+                Height="50"
+                FontFamily="Britannic Bold"
+                FontSize="30"
+                RenderTransformOrigin="-0.25,0.47"
+                Click="Operator_Click" />
+        <Button Content="4"
+                HorizontalAlignment="Left"
+                Margin="38,210,0,0"
+                VerticalAlignment="Top"
+                Width="50"
+                Height="50"
+                FontFamily="Britannic Bold"
+                FontSize="20"
+                RenderTransformOrigin="0.717,0.356"
+                Click="Button_Click" />
+        <Button Content="5"
+                HorizontalAlignment="Left"
+                Margin="108,210,0,0"
+                VerticalAlignment="Top"
+                Width="50"
+                Height="50"
+                FontFamily="Britannic Bold"
+                FontSize="20"
+                RenderTransformOrigin="-0.06,0.86"
+                Click="Button_Click" />
+        <Button Content="6"
+                HorizontalAlignment="Left"
+                Margin="178,210,0,0"
+                VerticalAlignment="Top"
+                Width="50"
+                Height="50"
+                FontFamily="Britannic Bold"
+                FontSize="20"
+                RenderTransformOrigin="0.717,0.356"
+                Click="Button_Click" />
+        <Button Content="*"
+                HorizontalAlignment="Left"
+                Margin="248,210,0,0"
+                VerticalAlignment="Top"
+                Width="50"
+                Height="50"
+                FontFamily="Britannic Bold"
+                FontSize="30"
+                RenderTransformOrigin="-0.25,0.47"
+                Click="Operator_Click" />
+        <Button Content="3"
+                HorizontalAlignment="Left"
+                Margin="178,286,0,0"
+                VerticalAlignment="Top"
+                Width="50"
+                Height="50"
+                FontFamily="Britannic Bold"
+                FontSize="20"
+                RenderTransformOrigin="0.717,0.356"
+                Click="Button_Click" />
+        <Button Content="-"
+                HorizontalAlignment="Left"
+                Margin="248,286,0,0"
+                VerticalAlignment="Top"
+                Width="50"
+                Height="50"
+                FontFamily="Britannic Bold"
+                FontSize="30"
+                RenderTransformOrigin="-0.25,0.47"
+                Click="Operator_Click" />
+        <Button Content="+"
+                HorizontalAlignment="Left"
+                Margin="248,362,0,0"
+                VerticalAlignment="Top"
+                Width="50"
+                Height="50"
+                FontFamily="Britannic Bold"
+                FontSize="30"
+                RenderTransformOrigin="0.717,0.356"
+                Click="Operator_Click" />
+        <Button Content="0"
+                HorizontalAlignment="Left"
+                Margin="38,362,0,0"
+                VerticalAlignment="Top"
+                Width="120"
+                Height="50"
+                FontFamily="Britannic Bold"
+                FontSize="20"
+                RenderTransformOrigin="-0.25,0.47"
+                Click="Button_Click" />
+        <Button Content="."
+                HorizontalAlignment="Left"
+                Margin="178,362,0,0"
+                VerticalAlignment="Top"
+                Width="50"
+                Height="50"
+                FontFamily="Britannic Bold"
+                FontSize="30"
+                RenderTransformOrigin="0.717,0.356"
+                Click="Button_Click" />
+        <Button Content="CE"
+                HorizontalAlignment="Left"
+                Margin="20,137,0,0"
+                VerticalAlignment="Top"
+                Width="70"
+                Height="50"
+                FontFamily="Britannic Bold"
+                FontSize="20"
+                RenderTransformOrigin="-0.25,0.47"
+                Click="Clear_Element_Click"
+                Grid.Column="1" />
+        <Button Content="C"
+                HorizontalAlignment="Left"
+                Margin="20,210,0,0"
+                VerticalAlignment="Top"
+                Width="70"
+                Height="50"
+                FontFamily="Britannic Bold"
+                FontSize="20"
+                RenderTransformOrigin="-0.25,0.47"
+                Click="clear_Click"
+                Grid.Column="1" />
+        <Button x:Name="equal_button"
+                Content="="
+                HorizontalAlignment="Left"
+                Margin="20,286,0,0"
+                VerticalAlignment="Top"
+                Width="70"
+                Height="126"
+                FontFamily="Britannic Bold"
+                FontSize="30"
+                RenderTransformOrigin="-0.25,0.47"
+                Click="equals_Click"
+                Grid.Column="1" />
+        <Button Content="7"
+                HorizontalAlignment="Left"
+                Margin="38,134,0,0"
+                VerticalAlignment="Top"
+                Width="50"
+                Height="50"
+                FontFamily="Britannic Bold"
+                FontSize="20"
+                RenderTransformOrigin="-0.25,0.47"
+                Click="Button_Click" />
+        <TextBox x:Name="screen"
+                 HorizontalAlignment="Left"
+                 Height="84"
+                 Margin="38,28,0,0"
+                 Text="0"
+                 VerticalAlignment="Top"
+                 Width="350"
+                 Grid.ColumnSpan="2"
+                 FontFamily="Times New Roman"
+                 FontWeight="Bold"
+                 FontSize="40"
+                 FlowDirection="LeftToRight"
+                 TextOptions.TextFormattingMode="Display"
+                 VerticalScrollBarVisibility="Disabled"
+                 HorizontalScrollBarVisibility="Visible" />
+        <Button Content="2"
+                HorizontalAlignment="Left"
+                Margin="108,286,0,0"
+                VerticalAlignment="Top"
+                Width="50"
+                Height="50"
+                FontFamily="Britannic Bold"
+                FontSize="20"
+                RenderTransformOrigin="0.717,0.356"
+                Click="Button_Click" />
+        <Button Content="1"
+                HorizontalAlignment="Left"
+                Margin="38,286,0,0"
+                VerticalAlignment="Top"
+                Width="50"
+                Height="50"
+                FontFamily="Britannic Bold"
+                FontSize="20"
+                RenderTransformOrigin="0.717,0.356"
+                Click="Button_Click" />
     </Grid>
 </Window>

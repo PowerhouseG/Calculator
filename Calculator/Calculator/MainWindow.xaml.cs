@@ -21,6 +21,7 @@ namespace Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Boolean dot_present = false;
        
       
         public MainWindow()
@@ -31,13 +32,27 @@ namespace Calculator
         private void Button_Click(object sender, RoutedEventArgs e)
         {
           
+         
             Button button = (Button)sender;
+            if (button == null)
+            {
+                return;
+            }
             if (screen.Text == "0"&&!button.Content.Equals("."))
                 screen.Clear();
             if ((string)button.Content == ".")
             {
-                if (!screen.Text.EndsWith("."))
-                    screen.Text += button.Content;
+                if (!screen.Text.EndsWith(".") && !dot_present)
+                    if (screen.Text.EndsWith("+") || screen.Text.EndsWith("-") || screen.Text.EndsWith("*") ||
+                        screen.Text.EndsWith("/"))
+                    {
+                        screen.Text += "0" + button.Content;
+                    }
+                    else
+                    {
+                        screen.Text += button.Content;
+                    }
+                    dot_present = true;
 
             }
             else
@@ -50,39 +65,59 @@ namespace Calculator
         private void Operator_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
+            if (button == null)
+            {
+                return;
+            }
             if (screen.Text == "0" && button.Content.Equals("-"))
             {
                 screen.Clear();
             }
+            if (screen.Text.EndsWith("+") || screen.Text.EndsWith("-") || screen.Text.EndsWith("*") ||
+                        screen.Text.EndsWith("/"))
+            {
+                screen.Text = screen.Text.Remove(screen.Text.Length - 1);
+            }
             screen.Text +=  button.Content;
+            dot_present = false;
         }
  
 
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Clear_Element_Click(object sender, EventArgs e)
         {
             if (screen.Text.Length > 1)
             {
+                if (screen.Text.EndsWith("."))
+                {
+                    dot_present = false;
+                }
                 screen.Text = screen.Text.Remove(screen.Text.Length - 1);
             }
             else
             {
                 screen.Text = "0";
+                dot_present = false;
 
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void clear_Click(object sender, EventArgs e)
             {
                 screen.Text = "0";
+            dot_present = false;
             }
 
         private void equals_Click(object sender, EventArgs e)
         {
             try
             {
-                var something = new DataTable().Compute(screen.Text, null);
-                screen.Text = Convert.ToString(something).Replace(",", ".");
+                var result = new DataTable().Compute(screen.Text, null);
+                screen.Text = Convert.ToString(result).Replace(",", ".");
+                if (screen.Text.Contains("."))
+                {
+                    dot_present = true;
+                }
             }
             catch (OverflowException)
             {
